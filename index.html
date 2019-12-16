@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="./Scripts/jquery-1.9.1.min.js"></script>
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/site.css" rel="stylesheet" />
+    <title>Home</title>
+  </head>
+
+  <body onload="myFunction()">
+    <div class="container">
+      <div class="row">
+        <header class="col-sm-12">
+          <div id="logo" class="col-sm-2">
+            <img
+              src="./Images/mvp_management_properties.png"
+              alt="Augusta Technical College Logo"
+            />
+          </div>
+          <div class="col-sm-8">
+            <h1>Property Management Services</h1>
+          </div>
+          <div class="col-sm-2" id="navBtn">
+            <span><input type="button" id="btnLogin" value="Login"/></span>
+            <span><input type="button" id="btnSignup" value="Sign Up"/></span>
+          </div>
+        </header>
+      </div>
+      <main>
+        <div class="row">
+          <nav class="col-sm-12">
+            <a class="col-sm-3" href="personalInfo.html"
+              ><span>Personal Info</span></a
+            >
+            <a class="col-sm-3" href="newTimeSheet.html"
+              ><span>Create New Time Sheet</span></a
+            >
+            <a class="col-sm-3" href="currentTimeSheet.html"
+              ><span>Current Period Time Sheet</span></a
+            >
+            <a class="col-sm-3" href="previousTimeSheet.html"
+              ><span>Past Period Time Sheets</span></a
+            >
+          </nav>
+        </div>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="col-sm-5 imgAmblem">
+              <p>
+                This App will allow the Maintenance Employees to be assigned a
+                task for a particular dwelling. The Owners Name, address, phone
+                numbers are in the Assignments table. The Description of the
+                problem could be leaky faucet, painting a wall etc with flag
+                field “completed” included. Your choice of DMS and programming
+                language. Once you are ready to turn in – Two things – 1. You
+                will execute it with me showing how you satisfied each of the
+                requirements 2. You will put it in the drop box.
+              </p>
+            </div>
+
+            <div class="col-sm-7">
+              <h3>
+                Welcome, Please login to start using the Time-Sheet application.
+              </h3>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- ------------ The Login Modal ----------------- -->
+      <div id="loginModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span id="loginClose" class="close">&times;</span>
+          <form>
+            <div class="modal-image"><img src="./Images/atcLogo.png" /></div>
+            <div id="fieldsetBckg">
+              <fieldset class="row">
+                <!--Groups elements in a form-->
+                <ul>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10" style="text-align: left">
+                    <li class="text">Username</li>
+                    <li>
+                      <input
+                        type="text"
+                        name="username"
+                        placeholder="Username"
+                      />
+                    </li>
+                    <li class="text">Password</li>
+                    <li>
+                      <input
+                        type="text"
+                        name="password"
+                        placeholder="Password"
+                      />
+                    </li>
+                    <li class="text" style="color: rgb(185, 179, 179,0.0);">
+                      Button
+                    </li>
+                    <li>
+                      <input class="inputBtn" type="button" value="Login" />
+                    </li>
+                    <span id="spacer">x</span>
+                  </div>
+                  <div class="col-sm-1"></div>
+                </ul>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- ------------ The SignUp Modal ----------------- -->
+      <div id="signupModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span id="signupClose" class="close">&times;</span>
+          <form>
+            <div class="modal-image"><img src="./Images/atcLogo.png" /></div>
+            <div id="fieldsetBckg">
+              <fieldset class="row">
+                <!--Groups elements in a form-->
+                <ul>
+                  <div class="col-sm-1"></div>
+                  <div class="col-sm-10" style="text-align: left">
+                    <li class="text">Firstname</li>
+                    <li>
+                      <input
+                        type="text"
+                        name="firstname"
+                        placeholder="Firstname"
+                      />
+                    </li>
+                    <li class="text">Lastname</li>
+                    <li>
+                      <input
+                        type="text"
+                        name="lastname"
+                        placeholder="Lastname"
+                      />
+                    </li>
+                    <li class="text">Email</li>
+                    <li>
+                      <input type="email" name="email" placeholder="Email" />
+                    </li>
+                    <li class="text">Password(6 or more characters)</li>
+                    <li>
+                      <input
+                        type="password"
+                        name="password"
+                        placeholder="Password"
+                      />
+                    </li>
+                    <li class="text" style="color: rgb(185, 179, 179,0.0);">
+                      Button
+                    </li>
+                    <li>
+                      <input class="inputBtn" type="button" value="Join Now" />
+                    </li>
+                  </div>
+                  <div class="col-sm-1"></div>
+                </ul>
+              </fieldset>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--link to an external javascript file-->
+      <script src="./Scripts/app.js"></script>
+      <footer>
+        <p>
+          &copy;
+          <!-- label (lblyear)-->
+          F.Dalbay - CIST 2383 Project
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="./Scripts/jquery-1.9.1.min.js"></script>
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/site.css" rel="stylesheet" />
+    <title>Previous Time Sheet</title>
+</head>
+
+<body onload="myFunction()">
+    <div class="container">
+        <div class="row">
+            <header class="col-sm-12">
+                <div id="logo" class="col-sm-2"><img src="./Images/atcLogo.png" alt="Augusta Technical College Logo" />
+                </div>
+                <div class="col-sm-8">
+                    <h1>AUGUSTA TECHNICAL COLLEGE TIME-SHEET</h1>
+                </div>
+                <div class="col-sm-2" id="navBtn">
+                    <span><input type="button" onclick="redirectToIndex()" id="btnLogout" value="Logout"></span>
+                </div>
+            </header>
+        </div>
+        <main>
+            <div class="row">
+                <nav class="col-sm-12">
+                        <a class="col-sm-3" href="personalInfo.html" ><span id="personalInfo">Personal Info</span></a>
+                        <a class="col-sm-3" href="newTimeSheet.html"><span id="newTimeSheet">Create New Time Sheet</span></a>
+                        <a class="col-sm-3" href="currentTimeSheet.html"><span id="currentTimeSheet">Current Period Time Sheet</span></a>
+                        <a class="col-sm-3" href="previousTimeSheet.html"><span id="previousTimeSheet">Past Period Time Sheets</span></a>
+                </nav>
+            </div>
+
+            <!-- Content here -->
+            <div class="row">
+
+                <div class="col-sm-12">
+                    <div class="main-content">
+                        <div class="row">
+                                    <div class="col-sm-12">
+                                    <br>
+                                    <select name="DOBMonth">
+                                            <option>- Month -</option>
+                                            <option value="January">January</option>
+                                            <option value="Febuary">Febuary</option>
+                                            <option value="March">March</option>
+                                            <option value="April">April</option>
+                                            <option value="May">May</option>
+                                            <option value="June">June</option>
+                                            <option value="July">July</option>
+                                            <option value="August">August</option>
+                                            <option value="September">September</option>
+                                            <option value="October">October</option>
+                                            <option value="November">November</option>
+                                            <option value="December">December</option>
+                                    </select>
+                                    <select name="DOBYear">
+                                            <option>- Year -</option>
+                                            <option value="2019">2019</option>
+                                            <option value="2018">2018</option>
+                                            <option value="2017">2017</option>
+                                            <option value="2016">2016</option>
+                                    </select>
+                                        <span class="topSpan" id="Pay Period">Pay Period:</span>
+                                    </div>
+                        </div>
+                        <!-- First Row -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <!-- Table -->
+                                <form>
+                                    <fieldset>
+                                        <ul>
+                                            <table id="tblNewTimeSheet">
+                                                <tr>
+                                                    <th class="col-sm-2">Date</th>
+                                                    <th class="col-sm-2">Time-In</th>
+                                                    <th class="col-sm-2">Time-Out</th>
+                                                    <th class="col-sm-2">Break Period</th>
+                                                    <th class="col-sm-2">Hours Worked</th>
+                                                    <th class="col-sm-2">Overage</th>
+                                                </tr>
+                                              
+                                                <!--          This is where we insert the data dynamically-->
+
+                                                <tr>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                    <td class="newInput">dynamic entry</td>
+                                                </tr>
+                                                <tr>
+                                                        <td class="newInput">dynamic entry</td>
+                                                        <td class="newInput">dynamic entry</td>
+                                                        <td class="newInput">dynamic entry</td>
+                                                        <td class="newInput">dynamic entry</td>
+                                                        <td class="newInput">dynamic entry</td>
+                                                        <td class="newInput">dynamic entry</td>
+                                                    </tr>
+                                            </table>
+                                        </ul>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Exit Button -->
+                <div class="col-sm-12">
+                        <input type="button" id="btnCurrentExit" onclick="redirectToIndex()" value="Exit" class="main-content-current">
+                    </div>
+            </div>
+
+        </main>
+        <!--link to an external javascript file-->
+        <script src="./Scripts/app.js"></script>
+        <footer>
+            <p>&copy;
+                <!-- label (lblyear)-->
+                F.Dalbay - CIST 2383 Project</p>
+        </footer>
+    </div>
+</body>
+
+</html>
