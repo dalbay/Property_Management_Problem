@@ -218,7 +218,7 @@ footer p {
   margin-top: 10px;
 }
 .inputBtn {
-  background-color: #005935;
+  background-color: rgb(41, 86, 166);
   color: #f1f1f1;
   font-size: 12px;
   font-weight: bold;
@@ -227,12 +227,12 @@ footer p {
 /* Content */
 .main-content {
   background-color: #efefef;
-  border: 1px solid #005935;
+  border: 1px solid rgb(41, 86, 166);
   border-radius: 3px;
   margin: 30px 100px 30px;
   text-align: center;
   font-weight: bold;
-  color: #005935;
+  color: rgb(41, 86, 166);
   padding-bottom: 50px;
   padding-top: 20px;
 }
@@ -243,7 +243,7 @@ footer p {
 }
 .main-content-input {
   background-color: white;
-  border: 1px solid #005935;
+  border: 1px solid rgb(41, 86, 166);
   border-radius: 3px;
   padding: 5px 0px 5px 10px;
   font-weight: normal;
@@ -251,8 +251,8 @@ footer p {
   width: 200px;
 }
 .main-content-button {
-  background-color: #005935;
-  border: 1px solid #005935;
+  background-color: rgb(41, 86, 166);
+  border: 1px solid rgb(41, 86, 166);
   border-radius: 3px;
   text-align: center;
   font-weight: normal;
@@ -262,7 +262,7 @@ footer p {
   color: #efefef;
 }
 .main-content-button:hover {
-  background-color: #3a8668;
+  background-color: rgb(36, 170, 225);
   border-color: rgb(17, 11, 11);
   border: 1px solid;
   border-radius: 3px;
@@ -299,15 +299,15 @@ td.newInput {
 }
 
 span.topSpan {
-  color: #005935;
+  color: rgb(41, 86, 166);
   float: left;
   padding-left: 40px;
 }
 
 /*Current page*/
 .main-content-current {
-  background-color: #005935;
-  border: 1px solid #005935;
+  background-color: rgb(41, 86, 166);
+  border: 1px solid rgb(41, 86, 166);
   border-radius: 3px;
   text-align: center;
   font-weight: normal;
@@ -320,7 +320,7 @@ span.topSpan {
   margin-right: 10px;
 }
 .main-content-current:hover {
-  background-color: #3a8668;
+  background-color: rgb(36, 170, 225);
   border-color: rgb(17, 11, 11);
   border: 1px solid;
   border-radius: 3px;
