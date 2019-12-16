@@ -1,6 +1,7 @@
 ﻿body {
   background-color: #f1f1f1;
   min-width: 450px;
+  background-image: url(/Images/64683_122201413756PM82846.jpg);
 }
 header {
   text-align: center;
@@ -14,6 +15,8 @@ header div#logo > img {
 
 header h1 {
   color: rgb(41, 86, 166);
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
 }
 
 header div input {
@@ -22,7 +25,7 @@ header div input {
   width: 70px;
   background-color: rgb(41, 86, 166);
   border-color: #f1f1f1;
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 1px;
   box-shadow: 2px 2px #cccccc;
   margin: 1px;
@@ -33,7 +36,7 @@ header div input:hover {
   width: 70px;
   background-color: rgb(36, 170, 225);
   border-color: rgb(17, 11, 11);
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 1px;
   box-shadow: 2px 2px #cccccc;
   margin: 1px;
@@ -49,7 +52,7 @@ nav {
 nav span {
   display: block;
   border: 1px solid rgb(58, 134, 104, 0.4);
-  border-radius: 5px;
+  border-radius: 3px;
   padding: 5px 0px;
   margin: 5px 0px;
   color: #f1f1f1;
@@ -59,7 +62,7 @@ nav span:hover {
   background-color: rgb(36, 170, 225);
   padding: 5px 0px;
   margin: 5px 0px;
-  border-radius: 5px;
+  border-radius: 3px;
   border-width: 1px;
   color: #f1f1f1;
 }
@@ -67,10 +70,30 @@ nav a:hover {
   text-decoration: none;
 }
 
-.imgAmblem > p {
+article div {
+  display: block;
+  position: relative;
   max-width: 100%;
   height: auto;
   margin: 50px 10px;
+  background-color: rgba(225, 224, 223, 0.5);
+  border-radius: 3px;
+  border-width: 1px;
+  padding: 5px;
+}
+
+article p#introPara::first-letter {
+  text-transform: uppercase;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: Tahoma, Geneva, Verdana, sans-serif;
+
+  line-height: 1;
+  color: black;
+}
+
+article p span {
+  font-weight: bold;
 }
 
 h3 {
@@ -78,9 +101,26 @@ h3 {
 }
 
 main {
-  background-color: #dadada;
-  background-image: url(/Images/64683_122201413756PM82846.jpg);
+  display: block;
+  position: relative;
 }
+main .row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+main::after {
+  content: "";
+  background: url(/Images/64683_122201413756PM82846.jpg);
+  opacity: 0.9;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+*/
 
 /* Bootstrap styles */
 .container main {
@@ -101,14 +141,13 @@ label {
 /* Other styles */
 footer {
   border-top: 1px solid rebeccapurple;
-  background-image: url(../Images/atcFooter.png);
   background-size: contain;
-  background-repeat: no-repeat;
-  height: 200px;
+  height: 100px;
 }
 footer p {
   font-size: 80%;
   text-align: right;
+  font-weight: bold;
 }
 .bedtype label {
   /* Used to correct Bootstrap RadioButton server control style issue*/
