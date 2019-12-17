@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="./Scripts/jquery-1.9.1.min.js"></script>
+    <script src="./Scripts/bootstrap.min.js"></script>
+    <link href="./Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="./Content/site.css" rel="stylesheet" />
+    <title>Allocate Task</title>
+  </head>
+
+  <body onload="myFunction()">
+    <div class="container">
+      <div class="row">
+        <header class="col-sm-12">
+          <div id="logo" class="col-sm-2">
+            <img
+              src="./Images/mvp_management_properties.png"
+              alt="Property Management Application Logo"
+            />
+          </div>
+          <div class="col-sm-8">
+            <h1>PROPERTY MANAGEMENT SERVICES</h1>
+          </div>
+          <div class="col-sm-2" id="navBtn">
+            <span
+              ><input
+                type="button"
+                id="btnLogout"
+                onclick="redirectToIndex()"
+                value="Logout"
+            /></span>
+          </div>
+        </header>
+      </div>
+      <main>
+        <div class="row">
+          <nav class="col-sm-12">
+            <a class="col-sm-3" href="allocateTask.html"
+              ><span id="allocateTask">Allocate Tasks</span></a
+            >
+            <a class="col-sm-3" href="updateTask.html"
+              ><span id="updateTask">Update Current Task</span></a
+            >
+            <a class="col-sm-3" href="addTask.html"
+              ><span id="addTask">Add Specific Tasks & Employees</span></a
+            >
+            <a class="col-sm-3" href="completedTask.html"
+              ><span id="completedTask">Completed Tasks</span></a
+            >
+          </nav>
+        </div>
+
+        <!-- Content here -->
+        <form id="allocateForm">
+          <fieldset>
+            <div class="row">
+              <div class="col-sm-12">
+                <div class="main-content">
+                  <!-- First Row -->
+                  <div class="row">
+                    <!-- Left Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Maintenance Worker</span><br />
+                        <select
+                          id="employee"
+                          class="main-content-input allocateInput"
+                        >
+                          <option value="0">Assign Employee</option>
+                          <option value="1">one</option>
+                          <option value="2">two</option>
+                          <option value="3">three</option>
+                          <option value="4">four</option>
+                        </select>
+                      </div>
+                    </div>
+                    <!-- Right Section -->
+                    <div class="col-sm-6">
+                      <!-- First Row -->
+                      <div class="row main-content-row">
+                        <span>Date</span><br />
+                        <div class="main-content-input" id="currentDate"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Second Row -->
+                  <div class="row">
+                    <!-- Left Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Owner First Name</span><br />
+                        <input
+                          class="main-content-input allocateInput"
+                          type="text"
+                          placeholder="Type in First Name"
+                          name="fname"
+                        />
+                      </div>
+                    </div>
+                    <!-- Right Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Phone</span><br />
+                        <input
+                          class="main-content-input allocateInput"
+                          type="tel"
+                          placeholder="Type in Owners Phone Number"
+                          name="telNumber"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Third Row -->
+                  <div class="row">
+                    <!-- Left Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Owners Last Name</span><br />
+                        <input
+                          class="main-content-input allocateInput"
+                          type="text"
+                          placeholder="Type in Last Name"
+                          name="lname"
+                        />
+                      </div>
+                    </div>
+                    <!-- Right Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Problem Description</span><br />
+                        <select
+                          id="description"
+                          class="main-content-input allocateInput"
+                        >
+                          <option value="0">Identify Problem</option>
+                          <option value="1"> leaky faucet</option>
+                          <option value="2"> painting a wall </option>
+                          <option value="3">three</option>
+                          <option value="4">four</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Fourth Row -->
+                  <div class="row">
+                    <!-- Left Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <span>Address</span><br />
+                        <input
+                          class="main-content-input allocateInput"
+                          type="text"
+                          placeholder="Type in Owners Address"
+                          name="address"
+                        />
+                      </div>
+                    </div>
+                    <!-- Right Section -->
+                    <div class="col-sm-6">
+                      <div class="row main-content-row">
+                        <!-- Clear Button -->
+                        <div class="col-sm-12">
+                          <input
+                            type="button"
+                            value="Clear"
+                            class="main-content-current"
+                            onclick="clearAllocate()"
+                          />
+                          <input
+                            type="button"
+                            value="Allocate"
+                            class="main-content-current"
+                          />
+                        </div>
+                        <!-- Allocate Button  -->
+                        <div class="col-sm-12"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Exit Button -->
+              <div class="col-sm-12">
+                <input
+                  type="button"
+                  id="btnCurrentExit"
+                  onclick="redirectToIndex()"
+                  value="Exit"
+                  class="main-content-current"
+                />
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </main>
+      <!--link to an external javascript file-->
+      <script src="/Scripts/app.js"></script>
+      <footer>
+        <p>
+          &copy;
+          <!-- label (lblyear)-->
+          F.Dalbay - CIST 2383 Project
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

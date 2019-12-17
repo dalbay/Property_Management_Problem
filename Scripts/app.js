@@ -30,21 +30,44 @@ function redirectToIndex() {
 function myFunction() {
   var x = document.title;
   switch (x) {
-    case "New Time Sheet":
-      document.getElementById("newTimeSheet").style.backgroundColor = "#24aae1";
+    case "Update Task":
+      document.getElementById("updateTask").style.backgroundColor = "#24aae1";
       break;
-    case "Current Time Sheet":
-      document.getElementById("currentTimeSheet").style.backgroundColor =
-        "#24aae1";
+    case "Add Task":
+      document.getElementById("addTask").style.backgroundColor = "#24aae1";
       break;
-
-    case "Personal Info":
-      document.getElementById("personalInfo").style.backgroundColor = "#24aae1";
+    case "Allocate Task":
+      document.getElementById("allocateTask").style.backgroundColor = "#24aae1";
       break;
-    case "Previous Time Sheet":
-      document.getElementById("previousTimeSheet").style.backgroundColor =
+    case "Completed Task":
+      document.getElementById("completedTask").style.backgroundColor =
         "#24aae1";
   }
+  setCurrentDate();
 }
 
 document.querySelector("body").addEventListener("load", myFunction);
+
+// Clear Allocate Section
+function clearAllocate() {
+  var input = document.querySelectorAll("input.allocateInput");
+  var i;
+  for (i = 0; i < input.length; i++) {
+    input[i].value = "";
+  }
+  var selection = document.querySelectorAll("select.allocateInput");
+  for (i = 0; i < selection.length; i++) {
+    selection[i].selectedIndex = 0;
+    console.log(selection[i].children[0].value);
+  }
+}
+// Set the current date
+function setCurrentDate() {
+  var todaydate = new Date();
+  var day = todaydate.getDate();
+  var month = todaydate.getMonth() + 1;
+  var year = todaydate.getFullYear();
+  var datestring = day + "/" + month + "/" + year;
+
+  document.getElementById("currentDate").innerText = datestring;
+}

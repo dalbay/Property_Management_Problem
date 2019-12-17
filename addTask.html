@@ -8,7 +8,7 @@
     <script src="./Scripts/bootstrap.min.js"></script>
     <link href="./Content/bootstrap.min.css" rel="stylesheet" />
     <link href="./Content/site.css" rel="stylesheet" />
-    <title>Current Time Sheet</title>
+    <title>Add Task</title>
   </head>
 
   <body onload="myFunction()">
@@ -26,31 +26,29 @@
           </div>
           <div class="col-sm-2" id="navBtn">
             <span
-              ><form>
-                <input
-                  type="button"
-                  id="btnLogout"
-                  onclick="redirectToIndex()"
-                  value="Logout"
-                /></form
-            ></span>
+              ><input
+                type="button"
+                id="btnLogout"
+                onclick="redirectToIndex()"
+                value="Logout"
+            /></span>
           </div>
         </header>
       </div>
       <main>
         <div class="row">
           <nav class="col-sm-12">
-            <a class="col-sm-3" href="personalInfo.html"
-              ><span id="personalInfo">Personal Info</span></a
+            <a class="col-sm-3" href="allocateTask.html"
+              ><span>Allocate Tasks</span></a
             >
-            <a class="col-sm-3" href="newTimeSheet.html"
-              ><span id="newTimeSheet">Create New Time Sheet</span></a
+            <a class="col-sm-3" href="updateTask.html"
+              ><span>Update Current Task</span></a
             >
-            <a class="col-sm-3" href="currentTimeSheet.html"
-              ><span id="currentTimeSheet">Current Period Time Sheet</span></a
+            <a class="col-sm-3" href="addTask.html"
+              ><span id="addTask">Add Specific Tasks</span></a
             >
-            <a class="col-sm-3" href="previousTimeSheet.html"
-              ><span id="pastTimeSheet">Past Period Time Sheets</span></a
+            <a class="col-sm-3" href="completedTask.html"
+              ><span>Completed Tasks</span></a
             >
           </nav>
         </div>
@@ -59,34 +57,61 @@
         <div class="row">
           <div class="col-sm-12">
             <div class="main-content">
-              <div class="row">
-                <div class="col-sm-12">
-                  <span class="topSpan" id="CourseNumber">Course Number:</span>
-                  <br />
-                  <span class="topSpan" id="Pay Period">Pay Period:</span>
-                </div>
-              </div>
               <!-- First Row -->
               <div class="row">
                 <div class="col-sm-12">
                   <!-- Table -->
                   <form>
                     <fieldset>
-                      <ul>
+                      <ul style="padding-left: 0px;">
                         <table id="tblNewTimeSheet">
                           <tr>
                             <th class="col-sm-2">Date</th>
                             <th class="col-sm-2">Time-In</th>
                             <th class="col-sm-2">Time-Out</th>
                             <th class="col-sm-2">Break Period</th>
-                            <th class="col-sm-2">Hours Worked</th>
-                            <th class="col-sm-2">Overage</th>
+                            <th class="col-sm-2">Course</th>
                           </tr>
-
+                          <tr>
+                            <td class="inputRow" id="inputColumnDate">
+                              <input type="date" name="date" />
+                            </td>
+                            <td id="inputColumnTimeIn">
+                              <input type="time" name="timeIn" />
+                            </td>
+                            <td id="inputColumnTimeOut">
+                              <input type="time" name="timeOut" />
+                            </td>
+                            <td id="inputColumnBreak">
+                              <select>
+                                <option value="0">N/A</option>
+                                <option value="15">15 min</option>
+                                <option value="30">30 min</option>
+                                <option value="45">45 min</option>
+                                <option value="60">60 min</option>
+                              </select>
+                            </td>
+                            <td id="inputColumnCourse">
+                              <input type="text" placeholder="Ex: CIST1000" />
+                            </td>
+                          </tr>
                           <!--          This is where we insert the data dynamically-->
-
                           <tr>
-                            <td class="newInput">dynamic entry</td>
+                            <td
+                              id="btnRow"
+                              style="background-color: lightgray;"
+                              colspan="5"
+                            >
+                              <input
+                                type="button"
+                                class="main-content-button"
+                                id="btnSave"
+                                style="float: right;margin:10px;"
+                                value="Save"
+                              />
+                            </td>
+                          </tr>
+                          <tr>
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
@@ -99,10 +124,8 @@
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
                           </tr>
                           <tr>
-                            <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
                             <td class="newInput">dynamic entry</td>
@@ -117,32 +140,14 @@
               </div>
             </div>
           </div>
-          <!-- Update Button -->
-          <div class="col-sm-12">
-            <input
-              type="button"
-              id="btnCurrentUpdate"
-              value="Update"
-              class="main-content-current"
-            />
-          </div>
-          <!-- Print Button -->
-          <div class="col-sm-12">
-            <input
-              type="button"
-              id="btnCurrentPrint"
-              value="Print"
-              class="main-content-current"
-            />
-          </div>
           <!-- Exit Button -->
           <div class="col-sm-12">
             <input
               type="button"
-              id="btnCurrentExit"
-              onclick="redirectToIndex()"
+              id="btnExit"
               value="Exit"
-              class="main-content-current"
+              onclick="redirectToIndex()"
+              class="main-content-button"
             />
           </div>
         </div>
