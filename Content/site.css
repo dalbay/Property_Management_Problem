@@ -3,6 +3,9 @@
   min-width: 450px;
   background-image: url(/Images/64683_122201413756PM82846.jpg);
 }
+ul {
+  padding-inline-start: 0px;
+}
 header {
   text-align: center;
 }
