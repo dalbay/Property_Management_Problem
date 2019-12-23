@@ -205,44 +205,45 @@
                 <!--Groups elements in a form-->
                 <ul>
                   <div class="col-sm-1"></div>
-                  <div class="col-sm-10" style="text-align: left">
+                  <div class="col-sm-10">
                     <li class="text">Date</li>
                     <li>
-                      <input id="date" type="date" placeholder="Firstname" />
+                      <input id="date" type="date" />
                     </li>
                     <li class="text">Assigned Employee</li>
                     <li>
-                      <input
-                        id="empName"
-                        type="text"
-                        placeholder="Employee Name"
-                      />
+                      <input id="empName" type="text" />
                     </li>
                     <li class="text">Address</li>
                     <li>
-                      <input type="text" id="address" placeholder="address" />
+                      <input type="text" id="address" />
                     </li>
                     <li class="text">Phone</li>
                     <li>
-                      <input type="tel" id="phone" placeholder="Phone Number" />
+                      <input type="tel" id="phone" />
                     </li>
                     <li class="text">Description</li>
                     <li>
-                      <input
-                        type="text"
-                        id="description"
-                        placeholder="Description"
-                      />
+                      <input type="text" id="description" />
                     </li>
                     <li class="text">Completed :</li>
-                    <li><input type="checkbox" /></li>
-                    <li>
+                    <li id="chkCompleted">
+                      <input type="checkbox" />
+                    </li>
+                    <li style="margin-top: 5px;">
                       <input
                         onclick="updateWorkOrder()"
                         class="inputBtn"
                         type="button"
                         value="Update"
-                      /><input
+                      />
+                      <input
+                        onclick="deleteWorkOrder()"
+                        class="inputBtn"
+                        type="button"
+                        value="Delete"
+                      />
+                      <input
                         onclick="cancelUpdate()"
                         class="inputBtn"
                         type="button"

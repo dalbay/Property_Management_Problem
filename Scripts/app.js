@@ -186,6 +186,7 @@ function getSelection() {
     });
   }
 }
+
 // Get Updated WorkOrder from Update Modal
 function updateModalDisplay() {
   // add event listener for the closing x in modal
@@ -208,6 +209,7 @@ function updateModalDisplay() {
   document.getElementById("description").value = workOrder.getDescription();
 }
 
+// Update Work Order from updateModal
 function updateWorkOrder() {
   workOrder.setDate(document.getElementById("date").value);
   workOrder.setEmployee(document.getElementById("empName").value);
@@ -218,4 +220,11 @@ function updateWorkOrder() {
   modalUpdate.style.display = "none";
 
   // TODO: update DB - WorkOrder table!!!!!!
+}
+
+// Delete Work Order From DB
+function deleteWorkOrder() {
+  alert("Deleting Work Order");
+
+  // TODO: delete Work Order from DB!!!!!
 }

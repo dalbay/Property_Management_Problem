@@ -1,4 +1,10 @@
-﻿body {
+﻿@media (min-width: 768px) {
+  .col-sm-10 {
+    width: 100%;
+  }
+}
+
+body {
   background-color: #f1f1f1;
   min-width: 450px;
   background-image: url(/Images/64683_122201413756PM82846.jpg);
@@ -189,7 +195,12 @@ footer p {
 .modal-content form #fieldsetBckg {
   display: inline-block;
   background-color: #efefef;
-  line-height: 11px;
+}
+#fieldsetBckg li input {
+  margin: 0px 5px;
+}
+#chkCompleted {
+  margin-bottom: 5px;
 }
 .modal-image img {
   width: 110px;
@@ -205,26 +216,31 @@ footer p {
 }
 .modal-content ul {
   list-style: none;
-  padding-left: 3px;
 }
+
 .modal-content ul li input {
-  padding-left: 10px;
   font-size: 12px;
   border-radius: 3px;
   border: 1px solid rgb(188, 188, 188);
   width: 90%;
-  height: 20px;
+  text-align: center;
 }
 .modal-content ul li.text {
   font-weight: bold;
-  font-size: 8px;
-  margin-top: 8px;
+  font-size: 10px;
+  margin-top: 7px;
 }
 .inputBtn {
   background-color: rgb(41, 86, 166);
   color: #f1f1f1;
-  font-size: 12px;
-  font-weight: bold;
+  line-height: normal;
+}
+.inputBtn:hover {
+  background-color: rgb(36, 170, 225);
+  border-color: rgb(17, 11, 11);
+  border: 1px solid;
+  border-radius: 3px;
+  color: #efefef;
 }
 
 /* Content */
@@ -250,12 +266,8 @@ footer p {
   border-radius: 3px;
   padding: 4px 0px 4px 8px;
   font-weight: normal;
-  font-size: 12px;
-  width: 200px;
-}
-.main-content-input:focus {
   font-size: 14px;
-  padding: 3px 0px 2px 6px;
+  width: 200px;
 }
 
 .main-content-button {
@@ -304,9 +316,9 @@ th {
 
 td {
   border: 1px solid black;
-}
-td.newInput {
-  color: #cccccc;
+  color: rgb(41, 86, 166);
+  font-weight: normal;
+  padding: 5px 0px;
 }
 
 span.topSpan {
