@@ -86,7 +86,7 @@
 
                           <tr>
                             <td class="newInput">
-                              <input type="text" class="newInput" name="date" />
+                              <input type="date" class="newInput" name="date" />
                             </td>
                             <td class="newInput">
                               <input
@@ -209,43 +209,38 @@
             <div id="fieldsetBckg">
               <fieldset class="row">
                 <h5>Update-Delete Work Order</h5>
+                <h6>
+                  For: <i><span id="owner"></span></i>
+                </h6>
                 <!--Groups elements in a form-->
                 <ul>
                   <div class="col-sm-1"></div>
                   <div class="col-sm-10" style="text-align: left">
                     <li class="text">Date</li>
                     <li>
-                      <input
-                        type="date"
-                        name="firstname"
-                        placeholder="Firstname"
-                      />
+                      <input id="date" type="date" placeholder="Firstname" />
                     </li>
                     <li class="text">Assigned Employee</li>
                     <li>
                       <input
+                        id="empName"
                         type="text"
-                        name="lastname"
                         placeholder="Employee Name"
                       />
                     </li>
                     <li class="text">Address</li>
                     <li>
-                      <input type="text" name="address" placeholder="address" />
+                      <input type="text" id="address" placeholder="address" />
                     </li>
                     <li class="text">Phone</li>
                     <li>
-                      <input
-                        type="tel"
-                        name="phone"
-                        placeholder="Phone Number"
-                      />
+                      <input type="tel" id="phone" placeholder="Phone Number" />
                     </li>
                     <li class="text">Description</li>
                     <li>
                       <input
                         type="text"
-                        name="description"
+                        id="description"
                         placeholder="Description"
                       />
                     </li>

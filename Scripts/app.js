@@ -1,14 +1,38 @@
 class WorkOrder {
-  constructor(dateAssigned, employee_ID, owner, address, phone, description) {
+  constructor(
+    dateAssigned,
+    employee_ID,
+    employee,
+    owner,
+    address,
+    phone,
+    description
+  ) {
     this.dateAssigned = dateAssigned;
     this.employee_ID = employee_ID;
+    this.employee = employee;
     this.owner = owner;
     this.address = address;
     this.phone = phone;
     this.description = description;
   }
-  getWorkOrder() {
+  getDate() {
+    return this.dateAssigned;
+  }
+  getEmployeeName() {
+    return this.employee;
+  }
+  getOwner() {
+    return this.owner;
+  }
+  getAddress() {
     return this.address;
+  }
+  getPhone() {
+    return this.phone;
+  }
+  getDescription() {
+    return this.description;
   }
 }
 
@@ -116,6 +140,7 @@ function getSelection() {
       element.addEventListener("click", function() {
         var row = element.parentNode.parentNode;
         var date = row.children[0].children[0].value;
+        var employeeID = 1;
         var employee = row.children[1].children[0].value;
         var owner = row.children[2].innerText;
         var address = row.children[3].children[0].value;
@@ -124,6 +149,7 @@ function getSelection() {
 
         workOrder = new WorkOrder(
           date,
+          employeeID,
           employee,
           owner,
           address,
@@ -140,6 +166,14 @@ function getSelection() {
 }
 function updateModalDisplay() {
   modalUpdate.style.display = "block";
+  document.getElementById("owner").innerText = workOrder.getOwner();
+  var date = new Date(workOrder.getDate());
+  var currentDate = date.toISOString(true).slice(0, 10);
+  document.getElementById("date").value = currentDate;
+  document.getElementById("empName").value = workOrder.getEmployeeName();
+  document.getElementById("address").value = workOrder.getAddress();
+  document.getElementById("phone").value = workOrder.getPhone();
+  document.getElementById("description").value = workOrder.getDescription();
 }
 function createOrder() {
   //var newOrder = new WorkOrder(date, id, owner, add, pho, desc);
