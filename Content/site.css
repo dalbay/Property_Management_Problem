@@ -209,16 +209,16 @@ footer p {
 }
 .modal-content ul li input {
   padding-left: 10px;
-  font-size: 8px;
+  font-size: 12px;
   border-radius: 3px;
   border: 1px solid rgb(188, 188, 188);
-  width: 150px;
+  width: 90%;
   height: 20px;
 }
 .modal-content ul li.text {
   font-weight: bold;
-  font-size: 9px;
-  margin-top: 10px;
+  font-size: 8px;
+  margin-top: 8px;
 }
 .inputBtn {
   background-color: rgb(41, 86, 166);

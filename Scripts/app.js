@@ -1,35 +1,63 @@
-/*Login button - Displays Login Modal*/
+class WorkOrder {
+  constructor(dateAssigned, employee_ID, owner, address, phone, description) {
+    this.dateAssigned = dateAssigned;
+    this.employee_ID = employee_ID;
+    this.owner = owner;
+    this.address = address;
+    this.phone = phone;
+    this.description = description;
+  }
+  getWorkOrder() {
+    return this.address;
+  }
+}
+
+/* ********** GLOBAL VARIABLES  ********************/
+
+// Selected row as an object of WorkOrder
+var workOrder;
+
+/* *************** MODALS **************************/
+
+var modalLogin = document.getElementById("loginModal");
+var modalSignup = document.getElementById("signupModal");
+var modalUpdate = document.getElementById("updateModal");
+
+// Login Button - Displays Login Modal
 var btnLogin = document
   .getElementById("btnLogin")
   .addEventListener("click", function() {
     modalLogin.style.display = "block";
   });
-var modalLogin = document.getElementById("loginModal");
 
-/*SignUp button - Displays Signup Modal */
-var modalSignup = document.getElementById("signupModal");
+// SignUp Button - Displays Signup Modal
 var btnSignup = document
   .getElementById("btnSignup")
   .addEventListener("click", function() {
     modalSignup.style.display = "block";
   });
 
-/*Select Button - Display Update Modal */
-var modalUpdate = document.getElementById("updateModal");
-
-/*Hide the Modal*/
+// Hide the Login-Modal
 document.getElementById("loginClose").addEventListener("click", () => {
   modalLogin.style.display = "none";
 });
+
+// Hide the Signup-Modal
 document.getElementById("signupClose").addEventListener("click", () => {
   modalSignup.style.display = "none";
 });
 
-// Close app button
+/* ************ COMMON SECTIONS *********************/
+
+// Exit Button
 function redirectToIndex() {
   window.location = "index.html";
 }
 
+// Event Listener for Page-Load
+document.querySelector("body").addEventListener("load", myFunction);
+
+// Event Handler for Page-Load
 function myFunction() {
   var x = document.title;
   switch (x) {
@@ -37,9 +65,7 @@ function myFunction() {
       break;
     case "Update Task":
       document.getElementById("updateTask").style.backgroundColor = "#24aae1";
-
       getSelection();
-
       break;
     case "Add Task":
       document.getElementById("addTask").style.backgroundColor = "#24aae1";
@@ -54,9 +80,9 @@ function myFunction() {
   }
 }
 
-document.querySelector("body").addEventListener("load", myFunction);
+/* *************** ALLOCATE PAGE  ****************** */
 
-// Clear Allocate Section
+// Clear Button
 function clearAllocate() {
   var input = document.querySelectorAll("input.allocateInput");
   var i;
@@ -69,6 +95,7 @@ function clearAllocate() {
     console.log(selection[i].children[0].value);
   }
 }
+
 // Set the current date
 function setCurrentDate() {
   var todaydate = new Date();
@@ -80,69 +107,41 @@ function setCurrentDate() {
   document.getElementById("currentDate").innerText = datestring;
 }
 
-//var assignedWorkOrders = [];
-//var order;// = new WorkOrder();
+/* ************ UPDATE PAGE **************************/
 
-// Retrieve selected work order from the table
+// Select Button - Retrieve selected work order
 function getSelection() {
-  var index = 1;
-
   if (document.querySelectorAll("input.btnUpdate")) {
     document.querySelectorAll("input.btnUpdate").forEach(element => {
       element.addEventListener("click", function() {
         var row = element.parentNode.parentNode;
-        var date = row.children[0].value;
-        var employee = row.children[1].value;
-        var owner = row.children[2].value;
-        var address = row.children[3].value;
-        var phone = row.children[4].value;
+        var date = row.children[0].children[0].value;
+        var employee = row.children[1].children[0].value;
+        var owner = row.children[2].innerText;
+        var address = row.children[3].children[0].value;
+        var phone = row.children[4].children[0].value;
         var description = row.children[5].children[0].value;
-        // var workOrder = new WorkOrder(
-        //   date,
-        //   employee,
-        //   owner,
-        //   address,
-        //   phone,
-        //   description
-        // );
-        //assignedWorkOrders.push(order);
-        //workOrder.dateAssigned = row.firstChild.innerText;
-        //var date = (workOrder.dateAssigned = row.children[0]);
 
-        console.log(row);
-        console.log(description);
+        workOrder = new WorkOrder(
+          date,
+          employee,
+          owner,
+          address,
+          phone,
+          description
+        );
+        // console.log(row);
+        // console.log(description);
+        // createOrder();
+        updateModalDisplay();
       });
     });
   }
 }
-
-class WorkOrder {
-  constructor(dateAssigned, employee_ID, owner, address, phone, description) {
-    this.dateAssigned = dateAssigned;
-    this.employee_ID = employee_ID;
-    this.owner = owner;
-    this.address = address;
-    this.phone = phone;
-    this.description = description;
-  }
-  // constructor() {
-  //   this.dateAssigned = "00-00-0000";
-  //   this.employee_ID = 0;
-  //   this.owner = "No Owner Assigned";
-  //   this.address = "No Address Assigned";
-  //   this.phone = "000-000-0000";
-  //   this.description = "No description";
-  // }
-  getWorkOrder() {
-    return this.address;
-  }
+function updateModalDisplay() {
+  modalUpdate.style.display = "block";
 }
-var workOrder = new WorkOrder();
-workOrder.dateAssigned = "12/12/2019";
-workOrder.employee_ID = 123;
-workOrder.owner = "hans";
-workOrder.address = "123 homie";
-workOrder.phone = "123-123-1234";
-workOrder.description = "to much to do";
-
-console.log(workOrder.getWorkOrder());
+function createOrder() {
+  //var newOrder = new WorkOrder(date, id, owner, add, pho, desc);
+  console.log(workOrder);
+}
