@@ -285,7 +285,11 @@ input#btnExit {
   float: right;
   margin: 30px;
 }
-
+table#currentWorkOrders input {
+  text-align: center;
+  margin: 10px 1px 10px 1px;
+  width: 120px;
+}
 table#tblNewTimeSheet {
   text-align: center;
   margin-top: 10px;

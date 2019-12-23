@@ -55,7 +55,68 @@
             >
           </nav>
         </div>
-
+        <!-- ------------ The SignUp Modal ----------------- -->
+        <div id="updateModal" class="modal">
+          <!-- Modal content -->
+          <div class="modal-content">
+            <span id="signupClose" class="close">&times;</span>
+            <form>
+              <div class="modal-image">
+                <img src="./Images/mvp_management_properties.png" />
+              </div>
+              <div id="fieldsetBckg">
+                <fieldset class="row">
+                  <legend>Update/Delete Work Order</legend>
+                  <!--Groups elements in a form-->
+                  <ul>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-10" style="text-align: left">
+                      <li class="text">Date</li>
+                      <li>
+                        <input
+                          type="date"
+                          name="firstname"
+                          placeholder="Firstname"
+                        />
+                      </li>
+                      <li class="text">Lastname</li>
+                      <li>
+                        <input
+                          type="text"
+                          name="lastname"
+                          placeholder="Lastname"
+                        />
+                      </li>
+                      <li class="text">Email</li>
+                      <li>
+                        <input type="email" name="email" placeholder="Email" />
+                      </li>
+                      <li class="text">Password(6 or more characters)</li>
+                      <li>
+                        <input
+                          type="password"
+                          name="password"
+                          placeholder="Password"
+                        />
+                      </li>
+                      <li class="text" style="color: rgb(185, 179, 179,0.0);">
+                        Button
+                      </li>
+                      <li>
+                        <input
+                          class="inputBtn"
+                          type="button"
+                          value="Join Now"
+                        />
+                      </li>
+                    </div>
+                    <div class="col-sm-1"></div>
+                  </ul>
+                </fieldset>
+              </div>
+            </form>
+          </div>
+        </div>
         <!-- Content here -->
         <div class="row">
           <div class="col-sm-12">
@@ -72,7 +133,7 @@
                   <form>
                     <fieldset>
                       <ul>
-                        <table id="currentWorkorders">
+                        <table id="currentWorkOrders">
                           <tr>
                             <th class="col-sm-2">Date</th>
                             <th class="col-sm-2">Assigned Employee</th>
@@ -80,33 +141,94 @@
                             <th class="col-sm-2">Address</th>
                             <th class="col-sm-2">Phone</th>
                             <th class="col-sm-2">Description</th>
+                            <th class="col-sm-2">Update/Delete</th>
                           </tr>
 
                           <!--          This is where we insert the data dynamically-->
 
                           <tr>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
+                            <td class="newInput">
+                              <input type="text" class="newInput" name="date" />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="employee"
+                              />
+                            </td>
+                            <td class="newInput">Owner Name</td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="address"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="phone"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="description"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="button"
+                                class="main-content-button btnUpdate"
+                                value="SELECT"
+                                name="SelectionNo1"
+                              />
+                            </td>
                           </tr>
                           <tr>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                          </tr>
-                          <tr>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
-                            <td class="newInput">dynamic entry</td>
+                            <td class="newInput">
+                              <input type="text" class="newInput" name="date" />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="employee"
+                              />
+                            </td>
+                            <td class="newInput">Owner Name</td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="address"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="phone"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="text"
+                                class="newInput"
+                                name="description"
+                              />
+                            </td>
+                            <td class="newInput">
+                              <input
+                                type="button"
+                                class="main-content-button btnUpdate"
+                                value="SELECT"
+                                name="SelectionNo1"
+                              />
+                            </td>
                           </tr>
                         </table>
                       </ul>
