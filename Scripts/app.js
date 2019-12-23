@@ -40,6 +40,7 @@ class WorkOrder {
 
 // Selected row as an object of WorkOrder
 var workOrder;
+var updateCloseX;
 
 /* *************** MODALS **************************/
 
@@ -61,15 +62,22 @@ var btnSignup = document
     modalSignup.style.display = "block";
   });
 
-// Hide the Login-Modal
+// Hide Login-Modal
 document.getElementById("loginClose").addEventListener("click", () => {
   modalLogin.style.display = "none";
 });
 
-// Hide the Signup-Modal
+// Hide Signup-Modal
 document.getElementById("signupClose").addEventListener("click", () => {
   modalSignup.style.display = "none";
 });
+
+// Hide Update-Modal
+//updateCloseX.addEventListener("click", cancelUpdate);
+
+function cancelUpdate() {
+  modalUpdate.style.display = "none";
+}
 
 /* ************ COMMON SECTIONS *********************/
 
@@ -165,6 +173,11 @@ function getSelection() {
   }
 }
 function updateModalDisplay() {
+  // add event listener for the closing x  in modal
+  updateCloseX = document
+    .getElementById("updateClose")
+    .addEventListener("click", cancelUpdate);
+
   modalUpdate.style.display = "block";
   document.getElementById("owner").innerText = workOrder.getOwner();
   var date = new Date(workOrder.getDate());
@@ -176,6 +189,5 @@ function updateModalDisplay() {
   document.getElementById("description").value = workOrder.getDescription();
 }
 function createOrder() {
-  //var newOrder = new WorkOrder(date, id, owner, add, pho, desc);
   console.log(workOrder);
 }

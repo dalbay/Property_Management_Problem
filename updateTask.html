@@ -176,15 +176,6 @@
               </div>
             </div>
           </div>
-          <!-- Update Button -->
-          <div class="col-sm-12">
-            <input
-              type="button"
-              id="btnCurrentUpdate"
-              value="Update"
-              class="main-content-current"
-            />
-          </div>
           <!-- Exit Button -->
           <div class="col-sm-12">
             <input
@@ -201,7 +192,7 @@
       <div id="updateModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
-          <span id="signupClose" class="close">&times;</span>
+          <span id="updateClose" class="close">&times;</span>
           <form>
             <div class="modal-image">
               <img src="./Images/mvp_management_properties.png" />
@@ -252,7 +243,12 @@
                         class="inputBtn"
                         type="button"
                         value="Update"
-                      /><input class="inputBtn" type="button" value="Cancel" />
+                      /><input
+                        onclick="cancelUpdate()"
+                        class="inputBtn"
+                        type="button"
+                        value="Cancel"
+                      />
                     </li>
                     <li></li>
                   </div>
