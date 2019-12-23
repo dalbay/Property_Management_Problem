@@ -19,7 +19,7 @@ class WorkOrder {
   getDate() {
     return this.dateAssigned;
   }
-  getEmployeeName() {
+  getEmployee() {
     return this.employee;
   }
   getOwner() {
@@ -34,6 +34,24 @@ class WorkOrder {
   getDescription() {
     return this.description;
   }
+  setDate(date) {
+    this.dateAssigned = date;
+  }
+  setEmployee(employee) {
+    this.employee = employee;
+  }
+  setOwner(owner) {
+    this.owner = owner;
+  }
+  setAddress(address) {
+    this.address = address;
+  }
+  setPhone(phone) {
+    this.phone = phone;
+  }
+  setDescription(description) {
+    this.description = description;
+  }
 }
 
 /* ********** GLOBAL VARIABLES  ********************/
@@ -41,6 +59,7 @@ class WorkOrder {
 // Selected row as an object of WorkOrder
 var workOrder;
 var updateCloseX;
+var updateWorkOrder;
 
 /* *************** MODALS **************************/
 
@@ -73,8 +92,6 @@ document.getElementById("signupClose").addEventListener("click", () => {
 });
 
 // Hide Update-Modal
-//updateCloseX.addEventListener("click", cancelUpdate);
-
 function cancelUpdate() {
   modalUpdate.style.display = "none";
 }
@@ -164,30 +181,41 @@ function getSelection() {
           phone,
           description
         );
-        // console.log(row);
-        // console.log(description);
-        // createOrder();
         updateModalDisplay();
       });
     });
   }
 }
+// Get Updated WorkOrder from Update Modal
 function updateModalDisplay() {
-  // add event listener for the closing x  in modal
+  // add event listener for the closing x in modal
   updateCloseX = document
     .getElementById("updateClose")
     .addEventListener("click", cancelUpdate);
 
+  // display Update Modal
   modalUpdate.style.display = "block";
+
+  // fill in the input boxes
   document.getElementById("owner").innerText = workOrder.getOwner();
   var date = new Date(workOrder.getDate());
   var currentDate = date.toISOString(true).slice(0, 10);
   document.getElementById("date").value = currentDate;
-  document.getElementById("empName").value = workOrder.getEmployeeName();
+
+  document.getElementById("empName").value = workOrder.getEmployee();
   document.getElementById("address").value = workOrder.getAddress();
   document.getElementById("phone").value = workOrder.getPhone();
   document.getElementById("description").value = workOrder.getDescription();
 }
-function createOrder() {
-  console.log(workOrder);
+
+function updateWorkOrder() {
+  workOrder.setDate(document.getElementById("date").value);
+  workOrder.setEmployee(document.getElementById("empName").value);
+  workOrder.setAddress(document.getElementById("address").value);
+  workOrder.setPhone(document.getElementById("phone").value);
+  workOrder.setDescription(document.getElementById("description").value);
+  alert("Work Order is UPDATED!");
+  modalUpdate.style.display = "none";
+
+  // TODO: update DB - WorkOrder table!!!!!!
 }
