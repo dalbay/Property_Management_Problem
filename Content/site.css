@@ -232,7 +232,7 @@ footer p {
   background-color: #efefef;
   border: 1px solid rgb(41, 86, 166);
   border-radius: 3px;
-  margin: 30px 100px 30px;
+  margin: 30px 10px 30px;
   text-align: center;
   font-weight: bold;
   color: rgb(41, 86, 166);
@@ -288,14 +288,13 @@ input#btnExit {
 table#currentWorkOrders input {
   text-align: center;
   margin: 10px 1px 10px 1px;
-  width: 120px;
+  width: 90%;
 }
 table#tblNewTimeSheet {
   text-align: center;
   margin-top: 10px;
 }
 td.newInput {
-  text-align: center;
   border: 1px solid black;
 }
 th {
