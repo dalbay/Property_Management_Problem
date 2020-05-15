@@ -1,12 +1,58 @@
+//-------------MODEL-------------------
+// require mongoose package
+const mongoose = require("mongoose");
+// create schema for tasks:
+const taskSchema = new mongoose.Schema({
+  worker: {
+    type: String,
+    required: [true, "A task must have a name"], //pass in an array instead to use validators
+    unique: true,
+  },
+  date: {
+    type: String,
+  },
+  owner: {
+    type: String,
+    required: [true, "A task must have an owner"],
+  },
+  phone: {
+    type: String,
+    required: [true, "A task must have a phone number"],
+  },
+  address: {
+    type: String,
+    required: [true, "A task must have an address"],
+  },
+  description: {
+    type: String,
+  },
+});
+
+// create a model out of that schema
+const Task = mongoose.model("Task", taskSchema);
 // Exporting Functions:
 
 // get ALL Tasks
-exports.getAllTasks = (request, response) => {
-  response.status(500).json({
-    status: "error",
-    message: "This route is not yet defined!",
-  });
+exports.getAllTasks = async (request, response) => {
+  try {
+    // use the models find method - gets all data in Tour collection
+    const tasks = await Task.find();
+
+    response.status(200).json({
+      status: "success",
+      results: tasks.length,
+      data: {
+        tasks,
+      },
+    });
+  } catch (err) {
+    response.status(404).json({
+      status: "Fail",
+      message: err,
+    });
+  }
 };
+
 // get a Task
 exports.getTask = (request, response) => {};
 // create a Task

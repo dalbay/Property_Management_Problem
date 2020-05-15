@@ -20,6 +20,13 @@ This formatting is called Enveloping- common practive to mitigate some security 
 
 5 - Be stateless -> All state is handled on the client. (State refers to a piece of data in the application that might change overtime; ex: loggedIn, currentPage) This means that each request must contain all the information necessary to process a certain request. The server should not have to remember previous requests.
 */
+
+// DotENV extension used for environmental variables
+const dotenv = require("dotenv");
+
+// require mongoose
+const mongoose = require("mongoose");
+
 const http = require("http");
 // Use Express:
 const express = require("express");
@@ -41,6 +48,21 @@ Top level will be executed only once right after the application startup.
 const tourRouter = require("./taskRoutes");
 // Mounting tourRouter on a Router
 app.use("/api/tasks", tourRouter);
+
+//-------------Using Mongoose----------------------//
+dotenv.config({ path: "./config.env" });
+// connect to mongoose:
+const DB = process.env.DATABASE;
+mongoose
+  .connect(DB, {
+    useNewUrlParser: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then((con) => {
+    console.log(con.connections);
+    console.log("DB connection successful");
+  });
 
 /*
 __________________Handling Requests Without Express Router_____________
@@ -122,7 +144,7 @@ app.delete('/api/v1/tours/:id', (request, response) => {
 });
 */
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`App running no port ${port}...`);
 });
